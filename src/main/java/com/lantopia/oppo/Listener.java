@@ -2,7 +2,6 @@ package com.lantopia.oppo;
 
 import com.google.common.base.Charsets;
 import com.google.common.io.CharStreams;
-import com.google.common.io.Closeables;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
@@ -31,7 +30,7 @@ public class Listener {
                     final OutputStream response = httpExchange.getResponseBody())
                 {
                     final String s = CharStreams.toString(new InputStreamReader(request, Charsets.UTF_8));
-                    System.out.println("Received message " + s);
+                    System.out.println("Received getMessage " + s);
                     new OutputStreamWriter(response).write("{\"success\":true,\"msg\":\"do nothing.\"}");
                 }
             }
